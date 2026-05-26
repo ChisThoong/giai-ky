@@ -2,11 +2,8 @@
 
 import { FileBadge, Gem, Hammer, Shield } from "lucide-react";
 import { commitments } from "@/data/landing-data";
-import {
-  SectionReveal,
-  StaggerContainer,
-  StaggerItem,
-} from "@/components/landing/section-reveal";
+import { SectionReveal } from "@/components/landing/section-reveal";
+import { motion } from "framer-motion";
 
 const iconMap = {
   gem: Gem,
@@ -17,38 +14,68 @@ const iconMap = {
 
 export function CommitmentsSection() {
   return (
-    <SectionReveal as="section" className="py-16 md:py-20">
+    <SectionReveal as="section" className="bg-forest py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-10 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
-            Cam kết
-          </p>
-          <h2 className="mt-2 font-heading text-3xl font-semibold text-charcoal sm:text-4xl">
-            Niềm tin của Giai Kỳ
-          </h2>
-        </div>
+        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,340px)_1fr] lg:gap-16 xl:gap-20">
+          {/* Left — editorial intro */}
+          <div className="lg:sticky lg:top-28">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+              Cam kết
+            </p>
+            <h2 className="mt-3 font-heading text-3xl font-semibold leading-tight text-cream sm:text-4xl">
+              Niềm tin
+              <br />
+              của Giai Kỳ
+            </h2>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/60">
+              Mỗi viên ngọc đều mang theo lời hứa minh bạch — từ nguồn gốc đến
+              bảo hành trọn đời.
+            </p>
+            <div className="mt-8 flex items-center gap-6 border-t border-cream/10 pt-8">
+              <div>
+                <p className="font-heading text-3xl font-semibold text-gold">100%</p>
+                <p className="mt-1 text-xs text-cream/50">Ngọc tự nhiên</p>
+              </div>
+              <div className="h-10 w-px bg-cream/15" />
+              <div>
+                <p className="font-heading text-3xl font-semibold text-gold">GIA</p>
+                <p className="mt-1 text-xs text-cream/50">Kiểm định chuẩn</p>
+              </div>
+            </div>
+          </div>
 
-        <StaggerContainer className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {commitments.map((item) => {
-            const Icon = iconMap[item.icon];
-            return (
-              <StaggerItem
-                key={item.title}
-                className="group rounded-3xl border border-border/60 bg-white p-6 shadow-soft transition-all hover:border-gold/30 hover:shadow-soft-lg"
-              >
-                <div className="mb-4 flex size-12 items-center justify-center rounded-2xl bg-forest/5 transition-colors group-hover:bg-forest/10">
-                  <Icon className="size-6 text-forest" strokeWidth={1.5} />
-                </div>
-                <h3 className="font-heading text-lg font-semibold text-charcoal">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-charcoal/60">
-                  {item.description}
-                </p>
-              </StaggerItem>
-            );
-          })}
-        </StaggerContainer>
+          {/* Right — numbered list, no card grid */}
+          <div className="divide-y divide-cream/10 border-y border-cream/10">
+            {commitments.map((item, i) => {
+              const Icon = iconMap[item.icon];
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                  className="group grid gap-5 py-7 sm:grid-cols-[56px_1fr] sm:gap-6 sm:py-8 md:grid-cols-[72px_48px_1fr] md:gap-8"
+                >
+                  <span className="font-heading text-2xl font-semibold text-gold/40 transition-colors group-hover:text-gold sm:text-3xl">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div className="flex size-12 items-center justify-center rounded-xl border border-cream/10 bg-cream/5 transition-colors group-hover:border-gold/30 group-hover:bg-gold/10 sm:size-12">
+                    <Icon className="size-5 text-gold" strokeWidth={1.5} />
+                  </div>
+                  <div className="sm:col-span-2 md:col-span-1">
+                    <h3 className="font-heading text-xl font-semibold text-cream">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 max-w-xl text-sm leading-relaxed text-cream/55">
+                      {item.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </SectionReveal>
   );

@@ -31,7 +31,7 @@ export function BlogSection() {
           {blogPosts.map((post) => (
             <StaggerItem key={post.id}>
               <article className="group">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-[#141414]">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-secondary">
                   <Image
                     src={post.image}
                     alt={post.title}

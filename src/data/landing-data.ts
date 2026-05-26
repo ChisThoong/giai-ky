@@ -31,7 +31,7 @@ export const collectionCards = [
     id: "phi-thuy",
     region: "Myanmar — Loại A",
     name: "Phỉ Thúy",
-    description: "Xanh ngọc trong veo, chuẩn kiểm định GIA",
+    description: "Xanh ngọc trong veo",
     count: 120,
     image: "/images/jade-bangle-green.jpg",
     href: "#featured",
@@ -75,7 +75,7 @@ export const categories = [
     id: "phat-ban-menh",
     name: "Phật bản mệnh",
     slug: "phat-ban-menh",
-    image: "/images/jade-pendant-buddha.jpg",
+    image: "/images/jade-bangle-lavender.jpg",
     count: 42,
   },
   {
@@ -250,6 +250,36 @@ export const commitments = [
   },
 ];
 
+export const testimonials = [
+  {
+    id: "1",
+    quote:
+      "Chiếc vòng Phỉ Thúy tôi chọn tại Giai Kỳ trong veo đến bất ngờ. Chứng nhận GIA đầy đủ, nghệ nhân tư vấn rất tận tâm — cảm giác mua một báu vật thật sự.",
+    name: "Nguyễn Thu Hà",
+    role: "Khách hàng tại TP.HCM",
+    rating: 5,
+    initials: "TH",
+  },
+  {
+    id: "2",
+    quote:
+      "Gia đình tôi tin Giai Kỳ từ đời bố. Lần này đặt vòng Hòa Điền làm quà mẹ — đóng gói sang trọng, bảo hành trọn đời khiến tôi hoàn toàn yên tâm.",
+    name: "Trần Minh Quân",
+    role: "Khách hàng thân thiết",
+    rating: 5,
+    initials: "MQ",
+  },
+  {
+    id: "3",
+    quote:
+      "Tư vấn 1:1 giúp tôi chọn đúng size và màu ngọc hợp mệnh. Nhân viên giải thích rõ từng loại — trải nghiệm xứng đáng thương hiệu cao cấp.",
+    name: "Lê Phương Anh",
+    role: "Sưu tập ngọc",
+    rating: 5,
+    initials: "PA",
+  },
+];
+
 export const blogPosts = [
   {
     id: "1",
@@ -337,7 +367,7 @@ export const heroSlides = [
     titleHighlight: "Phỉ Thúy",
     titleAfter: " loại A",
     description:
-      "Vòng ngọc xanh ngọc trong veo, chuẩn kiểm định GIA đầy đủ.",
+      "Vòng ngọc xanh ngọc trong veo",
     descriptionSub: "Tôn vinh đẳng cấp và giá trị truyền thống qua từng viên ngọc.",
     primaryCta: "Khám phá Phỉ Thúy",
     secondaryCta: "Tư vấn chọn ngọc",

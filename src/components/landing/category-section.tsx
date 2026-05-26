@@ -55,18 +55,18 @@ export function CategorySection() {
               >
                 <Link
                   href={card.href}
-                  className="group relative flex aspect-[3/5] flex-col justify-end overflow-hidden rounded-3xl bg-forest shadow-soft-lg sm:aspect-[2/3]"
+                  className="group flex flex-col overflow-hidden rounded-3xl bg-forest shadow-soft-lg transition-shadow hover:shadow-soft-lg"
                 >
-                  <Image
-                    src={card.image}
-                    alt={card.name}
-                    fill
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/50 to-forest/10" />
-
-                  <div className="relative z-10 p-5 sm:p-6">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-[#0a1f16]">
+                    <Image
+                      src={card.image}
+                      alt={card.name}
+                      fill
+                      className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, 33vw"
+                    />
+                  </div>
+                  <div className="relative p-5 sm:p-6">
                     <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold">
                       {card.region}
                     </p>

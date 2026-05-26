@@ -70,7 +70,7 @@ export function FeaturedProducts() {
                 whileHover={{ y: -4 }}
                 className="group overflow-hidden rounded-3xl bg-white shadow-soft transition-shadow hover:shadow-soft-lg"
               >
-                <div className="relative aspect-[4/3] overflow-hidden bg-[#141414]">
+                <div className="relative aspect-[4/3] overflow-hidden bg-secondary">
                   <Image
                     src={product.image}
                     alt={product.name}
